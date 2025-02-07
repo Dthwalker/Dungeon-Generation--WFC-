@@ -3,8 +3,8 @@ import Navigation from "./Navigation.js";
 class DungeonGeneration {
 
     constructor() {
-        this.settings = new Navigation(10, 10, 10);
-        this.data = [];
+        this.settings = new Navigation(10, 10, 10, this.generate.bind(this));
+        this.data = this.createData();
         this.tilemap = new Image();
         new Promise(res => {
             this.tilemap.onload = () => res('good');
@@ -13,6 +13,15 @@ class DungeonGeneration {
     }
 
     init() {
+        console.log(this);
+    }
+
+    createData() {
+        let {width, height, tileSize} = this.settings.all;
+        
+    }
+
+    generate() {
         console.log(this);
     }
 
